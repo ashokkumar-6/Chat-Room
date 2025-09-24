@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatRoom - Real-time Chat Application</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app">
+        <div class="screen join-screen active">
+            <div class="form">
+                <div class="logo-container">
+                    <i class="fas fa-comments"></i>
+                    <h1>ChatRoom</h1>
+                </div>
+                <p class="subtitle">Join the conversation in real-time</p>
+                <div class="form-input">
+                    <input type="text" id="username" placeholder="Enter your username" autocomplete="off">
+                </div>
+                <div class="form-input">
+                    <button id="join-user">
+                        <span>Join Chat</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="user-count">
+                    <i class="fas fa-users"></i>
+                    <span id="online-count">0 users online</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="screen chat-screen">
+            <div class="header">
+                <div class="header-info">
+                    <i class="fas fa-comments"></i>
+                    <div>
+                        <div class="logo">ChatRoom</div>
+                        <div class="user-status" id="user-status">0 users online</div>
+                    </div>
+                </div>
+                <button id="exit-chat">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Exit</span>
+                </button>
+            </div>
+            
+            <div class="messages" id="messages"></div>
+            
+            <div class="typebox">
+                <button id="emoji-btn">
+                    <i class="far fa-smile"></i>
+                </button>
+                <input type="text" id="message-input" placeholder="Type your message..." autocomplete="off">
+                <button id="send-message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="code.js"></script>
+</body>
+</html>
